@@ -1,0 +1,12 @@
+import com.springboot.drools.springbootdrools.pojo.RewardsRequest;
+
+rule 'UserType is CORE';
+        when
+         rewardsRequest: RewardsRequest(userType == "CORE");
+
+        then
+        rewardsRequest.setUserType("CORE");
+        rewardsRequest.setUserId("rules invoked");
+        rewardsRequest.setOrderId("order rules invoked");
+
+end;
